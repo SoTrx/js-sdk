@@ -92,7 +92,7 @@ export default class GRPCClientState implements IClientState {
     return new Promise((resolve, reject) => {
       client.saveState(msgService, (err, _res) => {
         if (err) {
-          return reject({ error: err });
+          return reject(err);
         }
 
         // https://docs.dapr.io/reference/api/state_api/#response-body

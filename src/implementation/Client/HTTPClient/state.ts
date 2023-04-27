@@ -61,7 +61,7 @@ export default class HTTPClientState implements IClientState {
       });
     } catch (e: any) {
       this.logger.error(`Error saving state to store ${storeName}, error: ${e}`);
-      return { error: e };
+      throw e;
     }
 
     return {};
@@ -114,7 +114,7 @@ export default class HTTPClientState implements IClientState {
       });
     } catch (e: any) {
       this.logger.error(`Error deleting state from store ${storeName}, error: ${e}`);
-      return { error: e };
+      throw e;
     }
 
     return {};
